@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Kiss Day, My Wifeey ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ffccd9,#ffb3c6,#ff99bb);
+  overflow:hidden;
+}
+
+.container{
+  width:360px;
+  height:540px;
+  position:relative;
+  perspective:2000px;
+}
+
+h1{
+  position:absolute;
+  top:28px;
+  width:100%;
+  text-align:center;
+  font-family:'Dancing Script',cursive;
+  font-size:22px;
+  color:black;
+  z-index:10;
+}
+
+.page{
+  position:absolute;
+  inset:0;
+  background:#fff0f5;
+  border-radius:25px;
+  box-shadow:0 30px 70px rgba(0,0,0,0.18);
+  padding:95px 30px 30px;
+  box-sizing:border-box;
+  transform-origin:left;
+  transition:transform 1.2s cubic-bezier(.4,0,.2,1);
+  backface-visibility:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-family:'Dancing Script',cursive;
+  font-size:20px;
+  line-height:1.7;
+  color:black;
+}
+
+.page.flipped{
+  transform:rotateY(-165deg);
+  pointer-events:none;
+}
+
+.hidden{
+  display:none;
+}
+
+.final-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+}
+
+.final-content img{
+  width:160px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+  animation:fadeIn 2s ease forwards;
+  opacity:0;
+}
+
+@keyframes fadeIn{
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="scene">
+
+<h1>Happy Kiss Day, My Wifeey ❤️</h1>
+
+<!-- Screen 1 -->
+<div class="page" style="z-index:6">
+  Happy Kiss Day, My Wifeey ❤️
+  <br><br>
+  Tap slowly.
+</div>
+
+<!-- Screen 2 -->
+<div class="page hidden" style="z-index:5">
+  Do you know what I love the most about us?
+</div>
+
+<!-- Screen 3 -->
+<div class="page hidden" style="z-index:4">
+  Even now…
+  <br><br>
+  I still feel that pause.
+</div>
+
+<!-- Screen 4 -->
+<div class="page hidden" style="z-index:3">
+  That tiny moment before I kiss you —
+  <br><br>
+  where everything inside me chooses you again.
+  <br><br>
+  Not habit.
+  <br>
+  Not routine.
+  <br>
+  Choice.
+</div>
+
+<!-- Screen 5 -->
+<div class="page hidden" style="z-index:2">
+  And that’s what makes it beautiful…
+  <br><br>
+  I don’t kiss you because I’m used to you.
+  <br><br>
+  I kiss you because I never get enough of you
+  and it always feels great.
+</div>
+
+<!-- Final Screen -->
+<div class="page hidden" style="z-index:1">
+  <div class="final-content">
+    <div>
+      And if tomorrow came with no memories at all…
+      <br><br>
+      I would fall for you,
+      <br>
+      step closer,
+      <br>
+      and kiss you —
+      <br>
+      all over again. ❤️
+    </div>
+
+    <img src="penguin.gif" alt="Cute Penguin Kiss">
+  </div>
+</div>
+
+</div>
+
+<script>
+let index = 0;
+const pages = document.querySelectorAll(".page");
+
+document.getElementById("scene").addEventListener("click", function(){
+
+  if(index < pages.length - 1){
+    pages[index + 1].classList.remove("hidden");
+    pages[index].classList.add("flipped");
+    index++;
+  }
+
+});
+</script>
+
+</body>
+</html>
